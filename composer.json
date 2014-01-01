@@ -1,0 +1,28 @@
+{
+    "name": "uzulla/mockslimclient",
+    "description": "web scraper for Slim framework Mock. (for UnitTesting)",
+    "keywords": ["php", "unittest", "test", "slim", "phpunit"],
+    "type": "library",
+    "homepage": "https://github.com/uzulla/mock_slim_client",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "uzulla",
+            "email": "uzulla@himitsukichi.com",
+            "homepage": "http://twitter.com/uzulla/"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "paquettg/php-html-parser": "1.6.*"
+    },
+    "require-dev": {
+        "slim/slim": "2.4.*",
+        "phpunit/phpunit": "3.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Uzulla\\mock_slim_client": "lib/"
+        }
+    }
+}
