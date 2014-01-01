@@ -9,6 +9,18 @@ Slim frameworkにはMockがありますが、簡単にpostとかできずに不�
 イマイチ良くない設計＋ダーティーな実装なので、
 動作バージョンは限られると思います。
 
+install
+=======
+
+use Composer 
+```
+{
+    "require": {
+        "uzulla/mockslimclient": "dev-master"
+    }
+}
+```
+
 example
 =======
 
