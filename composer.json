@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Uzulla\\MockSlimClient": "lib/"
+            "Uzulla\\MockSlimClient": "lib"
         }
     }
 }
