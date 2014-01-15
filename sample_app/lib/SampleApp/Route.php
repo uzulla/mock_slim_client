@@ -2,9 +2,9 @@
 namespace SampleApp;
 class Route
 {
-    static function registrationRoute (\Slim\Slim $app)
+    public static function registrationRoute(\Slim\Slim $app)
     {
-        $app->get('/', function () use ($app){
+        $app->get('/', function () use ($app) {
             $app->render('index.php');
         });
 

@@ -3,12 +3,12 @@ class SampleTest extends \PHPUnit_Framework_TestCase
 {
     use \Uzulla\MockSlimClient;
 
-    static function registrationRoute($app)
+    public static function registrationRoute($app)
     {
         \SampleApp\Route::registrationRoute($app);
     }
 
-    static function createSlim()
+    public static function createSlim()
     {
         return new \Slim\Slim([
             'templates.path' => __DIR__.'/../../sample_app/templates'

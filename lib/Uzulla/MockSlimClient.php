@@ -4,15 +4,16 @@ namespace Uzulla;
 trait MockSlimClient
 {
     // PLEASE OVER RIDE this your function in use.
-    static function registrationRoute (\Slim\Slim $app)
+    public static function registrationRoute(\Slim\Slim $app)
     {
-        $app->get('/', function() use ($app){
+        $app->get('/', function () use ($app) {
             echo 'over ride me';
         });
     }
 
     // PLEASE OVER RIDE this your want
-    static function createSlim(){
+    public static function createSlim()
+    {
         return new \Slim\Slim([
             // template path が conf にフルパスで保存されていると共通化できて便利
             'templates.path' => '../templates'
@@ -20,19 +21,21 @@ trait MockSlimClient
     }
 
     // get PHPHtmlParser\Dom instance by req() response.
-    public function req_dom ($path = '/', $method = 'GET', $input='',$option = [])
+    public function req_dom($path = '/', $method = 'GET', $input='',$option = [])
     {
         $html = $this->req($path, $method, $input, $option);
         $dom = new \PHPHtmlParser\Dom;
         $dom->load($html);
+
         return $dom;
     }
 
     // make vitrual http request. return html(of raw body).
-    public function req($path = '/', $method = 'GET', $input='',$option = []){
+    public function req($path = '/', $method = 'GET', $input='',$option = [])
+    {
         // $app->post() が $_POSTにfallbackするので対応
         $_POST_OLD = [];
-        if($method==='POST'){
+        if ($method==='POST') {
             $_POST_OLD = $_POST;
             parse_str($input, $_POST);
         }
@@ -62,9 +65,10 @@ trait MockSlimClient
 
         ob_start();
         $app->run();
-        if($method==='POST'){
+        if ($method==='POST') {
             $_POST = $_POST_OLD;
         }
+
         return ob_get_clean();
     }
 }
