@@ -60,6 +60,13 @@ trait MockSlimClient
 
         $app = static::createSlim();
 
+        // \Slim\Slim::getInstance() response only FIRST MADE instance now(2014/05/27).
+        // slim constractor DON'T overwrite \Slim\Slim::$apps when new slim instance
+        // bellow code, force overwrite cached instance.
+        // This is important when you use \Slim\Slim::getInstance().
+        // (I was falling in hole, when use Class controllers(slim>=2.4.0))
+        $app->setName('default');
+
         // registration route to slim.
         static::registrationRoute($app);
 
