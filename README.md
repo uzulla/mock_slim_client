@@ -38,7 +38,7 @@ in PHPUnit test
 
 ```
 <?php
-class myTest extends \PHPUnit_Framework_TestCase
+class myTest extends \PHPUnit\Framework\TestCase
 {
     use \Uzulla\MockSlimClient; // use by trait
 

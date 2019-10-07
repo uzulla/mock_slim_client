@@ -13,12 +13,12 @@
         }
     ],
     "require": {
-        "php": ">=5.4",
-        "paquettg/php-html-parser": "1.6.*"
+        "php": ">=7.3",
+        "paquettg/php-html-parser": "2.1.*"
     },
     "require-dev": {
         "slim/slim": "2.4.*",
-        "phpunit/phpunit": "3.*"
+        "phpunit/phpunit": "8.*"
     },
     "autoload": {
         "psr-0": {
